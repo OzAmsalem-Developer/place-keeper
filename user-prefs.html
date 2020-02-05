@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- BS css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
+    <title>Choose Your Prefs!</title>
+</head>
+
+<body>
+    <header class="p-4">
+        <h1 class="text-center">Set Your Preferences</h1>
+    </header>
+
+<main class="p-4">
+    <form class="data-form" onsubmit="onSetPrefs(event)">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input required type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+        <div class="form-group">
+          <label for="bg-color">Choose your background color</label>
+          <input type="color" onchange="onSetBgColor(this.value)"  class="form-control" id="bg-color" aria-describedby="setBgColor" placeholder="Set background color">
+        </div>
+        <div class="form-group">
+            <label for="txt-color">Choose your text color</label>
+            <input type="color" value="#35d2c2" onchange="onSetTxtColor(this.value)" class="form-control" id="txt-color" aria-describedby="setTxtColor" placeholder="Set text color">
+          </div>
+        <div class="form-group">
+          <label for="b-date">Your Birth Date</label>
+          <input type="date" class="form-control" id="b-date" placeholder="Birth Date">
+        </div>
+        <div class="form-group">
+            <label for="b-time">Your exact birth time</label>
+            <input type="time" class="form-control" id="b-time" placeholder="Birth time">
+          </div>
+        <div class="form-group">
+            <label for="age">Your age</label>
+            <input onchange="showAge(this.value)" type="range" class="form-control"  id="age" min="18" max="120" placeholder="Age">
+            <span id="sAge">18</span>
+          </div>
+
+        <button type="submit" class="btn btn-primary">Your Astrological Forecast</button>
+      </form>
+
+      <section class="forecast text-center mt-4">
+          <h2>Your astrological forecast</h2>
+          <p></p>
+      </section>
+    </main>
+<!-- BS jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+        <script src="js/utilsService.js"></script>
+        <script src="js/userPrefService.js"></script>
+        <script src="js/userPref.js"></script>
+</body>
+
+</html>
